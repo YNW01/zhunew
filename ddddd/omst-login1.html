@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大事件</title>
+    <link rel="stylesheet" href="../assets/lib/layui-v2.6.8/layui/css/layui.css"/>
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+<body>
+    <div class="layui-main">
+        <img src="/assets/images/logo.png" alt=""/>
+    </div>
+    <div class="loginBox">
+       
+
+
+
+            <div class="titleBox"></div>
+
+            <div class=" loginBox2">
+              <form class="layui-form" action="" id="loginBox22">
+                <div class="layui-form-item">
+                 
+                    <i class="layui-icon layui-icon-username"></i>   
+
+                    <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input" id="mingzi">
+                  
+                </div>
+
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i> 
+                  
+                    <input type="password" name="password" required  lay-verify="required|ppd" placeholder="请输入密码" autocomplete="off" class="layui-input" id="mima">
+                  
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid  layui-btn-normal" lay-submit  id="dengli">登录</button>
+                </div>
+                <div class="layui-form-item link_reg2">
+                    <!-- <a href="javascript:;" id="link_reg">注册账号</a> -->
+                </div>
+             </form>
+            </div>
+             <!-- <div class="regBox">
+                <form class="layui-form" action="" id="regBox22">
+                    <div class="layui-form-item">
+                     
+                        <i class="layui-icon layui-icon-username"></i>   
+    
+                        <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                      
+                    </div>
+    
+                    <div class="layui-form-item">
+                        <i class="layui-icon layui-icon-password"></i> 
+                      
+                        <input type="password" name="password" required  lay-verify="required|ppd" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                      
+                    </div>
+                    <div class="layui-form-item">
+                        <i class="layui-icon layui-icon-password"></i> 
+                      
+                        <input type="password" name="repassword" required  lay-verify="required|ppd|ppd2" placeholder="请再输入密码" autocomplete="off" class="layui-input">
+                      
+                    </div>
+                    <div class="layui-form-item">
+                        <button class="layui-btn layui-btn-fluid  layui-btn-normal" lay-submit  >注册</button>
+                    </div>
+                    <div class="layui-form-item link_reg2">
+                        <a href="javascript:;" id="link_login">登录</a>
+                    </div>
+                 </form>
+               
+            </div>   -->
+
+
+
+
+    </div>
+
+
+
+     <script src="../assets/lib/layui-v2.6.8/layui/layui.js"></script>
+    <script src="../assets/lib/jquery.js"></script>
+    <script src="../assets/js/login copy.js"></script>
+
+    <script>
+        $(function(){
+ 
+         $('#dengli -伤处').on('click' , function(){
+          let ff = $('input').val()
+          let gg={}
+          let mingz = $('#mingzi').val()
+          let mima = $('#mima').val()
+          let dat3ee = 
+          console.log(mingz)
+          console.log(mima)
+           //   $.ajax({
+ 
+           //   type:'get',
+           //   url:'http://127.0.0.1:3000/api/getUserListById/',
+           //   data:{id:ff},
+           //   success:function(res){
+           
+           //     let tr = document.createElement('tr')
+           //     let tbody= document.querySelector('tbody')
+           //     tbody.innerHTML =`
+           //     <tr>
+           //     <td>
+           //      ${res.data[0].username}
+           //     </td>
+           //     <td>${res.data[0].dengji}</td>
+           //     <td>
+           //       <button type="button" class="layui-btn  layui-btn-xs" id="anniu">预览</button>
+           //       <button type="button" class="layui-btn  layui-btn-xs">删除</button>
+           //       <!-- <button type="button" class="layui-btn  layui-btn-xs">3</button>
+           //       <button type="button" class="layui-btn  layui-btn-xs">4</button> -->
+           //     </td>
+               
+           //   </tr>
+               
+           //     `
+           //     $('tbody').append('tbod')
+           //     console.log(res.data[0].dizhi)
+           //     console.log(res.data[0])
+ 
+           //   }
+           // }) 
+           $.ajax({
+ 
+ type:'get',
+ url:'http://127.0.0.1:3000/api/login',
+ data:{name:mingz},
+ success:function(res){
+   
+
+             console.log(res)
+             console.log(res.data[0].dizhi)
+             const mm  = res.data[0].dizhi
+             if (mm === mima){
+                location.href='/index.html'
+             }
+          
+ }
+ })
+ 
+         })
+       
+         
+  
+          
+         
+         $('#dengli').on('click' , function(){
+          let ff = $('input').val()
+          let gg={}
+          let mingz = $('#mingzi').val()
+          let mima = $('#mima').val()
+          console.log(mingz)
+          console.log(mima)
+           //   $.ajax({
+ 
+           //   type:'get',
+           //   url:'http://127.0.0.1:3000/api/getUserListById/',
+           //   data:{id:ff},
+           //   success:function(res){
+           
+           //     let tr = document.createElement('tr')
+           //     let tbody= document.querySelector('tbody')
+           //     tbody.innerHTML =`
+           //     <tr>
+           //     <td>
+           //      ${res.data[0].username}
+           //     </td>
+           //     <td>${res.data[0].dengji}</td>
+           //     <td>
+           //       <button type="button" class="layui-btn  layui-btn-xs" id="anniu">预览</button>
+           //       <button type="button" class="layui-btn  layui-btn-xs">删除</button>
+           //       <!-- <button type="button" class="layui-btn  layui-btn-xs">3</button>
+           //       <button type="button" class="layui-btn  layui-btn-xs">4</button> -->
+           //     </td>
+               
+           //   </tr>
+               
+           //     `
+           //     $('tbody').append('tbod')
+           //     console.log(res.data[0].dizhi)
+           //     console.log(res.data[0])
+ 
+           //   }
+           // }) 
+//            $.ajax({
+ 
+//  type:'post',
+ 
+       
+//  url:'http://127.0.0.1:3000/denghlu/login3',
+// //  authorization:Bearer <token>
+//  data:{name:mingz,mima:mima},
+//  success:function(res){
+   
+//     if (res.status === 0 ) {
+//             location.href = './index1.html'
+//           } else {
+//             alert('登录失败！')
+//           }
+//           $.get('/api/username', function (res) {
+//         // status 为 0 表示获取用户名称成功；否则表示获取用户名称失败！
+//         if (res.status !== 0) {
+//           alert('您尚未登录，请登录后再执行此操作！')
+//           location.href = './omst-login1.html'
+//         } else {
+//           alert('欢迎您：' + res.username)
+//         }
+//       }) 
+          
+             
+          
+//  }
+//  })
+ 
+//          })
+           let  feef='http://127.0.0.1:3000';
+         $.post('${}/denghlu/login3', {name:mingz,mima:mima}, function (res) {
+          // status 为 0 表示登录成功；否则表示登录失败！
+          if (res.status === 0) {
+            location.href = './index1.html'
+          } else {
+            alert('登录失败！')
+          }
+        })
+      })
+
+        })
+        </script>
+</body>
+</html>

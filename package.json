@@ -1,0 +1,31 @@
+{
+  "name": "omst",
+  "version": "1.0.0",
+  "description": "",
+  "main": "14.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YNW01/zhunew.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YNW01/zhunew/issues"
+  },
+  "homepage": "https://github.com/YNW01/zhunew#readme",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express-art-template": "^1.0.1",
+    "express-jwt": "^6.1.1",
+    "express-session": "^1.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mammoth": "^1.4.21",
+    "swig": "^1.4.2"
+  }
+}

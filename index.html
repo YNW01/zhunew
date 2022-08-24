@@ -4,9 +4,193 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>公司文件</title>
+    <link rel="stylesheet" href="./assets/lib/layui-v2.6.8/layui/css/layui.css"/>
+   <link rel="stylesheet" href="./assets/css/index.css">
+   
 </head>
 <body>
-    <div>dd</div>
-</body>
+    <div class="layui-layout layui-layout-admin">
+      <div class="layui-header" >
+        <div class="layui-logo layui-hide-xs layui-bg-black layui-bg-black22">
+           放logo
+        </div>
+        
+        <span class="dsd"> OMST公司文件管理</span>
+        <!-- 头部区域（可配合layui 已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+          <!-- 移动端显示 -->
+          <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+            <i class="layui-icon layui-icon-spread-left"></i>
+          </li>
+          <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+            
+             OMST公司文件管理
+            <i class="layui-icon layui-icon-spread-left"></i>
+          </li>
+          
+        </ul>
+         <ul class="layui-nav layui-layout-right">
+          <!-- <li class="layui-nav-item layui-hide layui-show-md-inline-block layui-hide22">
+            <a href="javascript:;">
+              
+              个人中心
+            </a>
+           
+          </li> -->
+          <!-- <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+            <a href="javascript:;">
+              <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
+              个人中心
+            </a>
+            <dl class="layui-nav-child">
+              <dd><a href="">基本资料</a></dd>
+              <dd><a href="">更换头像</a></dd>
+              <dd><a href="">重置密码</a></dd>
+            </dl>
+          </li> -->
+          <!-- <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+            <a href="javascript:;">
+              <i class="layui-icon layui-icon-logout ayui-icon-more-vertical">退出</i>
+            </a>
+          </li> -->
+          
+        </ul> -->
+      </div>
+      
+      <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll" >
+          <!-- <div class="sssssss">
+            <div class="ssssssss11">
+            <form class="layui-form" action="">
+              <div class="layui-form-item">
+                <input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+               
+              </div>
+              
+             
+              
+              
+              
+              
+            </form></div>
+
+            <div class="ssssssss22">
+              <button type="button" class="layui-btn ">搜索</button>
+            </div>
+          </div> -->
+          <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+          <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+              <li class="layui-nav-item " id="sddd">
+                <a href="./omst.html" target="aaas"> 搜索</a>
+                
+              </li>
+             
+              
+              <li class="layui-nav-item layui-nav-itemed">
+                <a href="javascript:;">实验室管理文件M</a>
+                <dl class="layui-nav-child">
+                  <dd><a href="./home/omst-l-m1.html" target="aaas"> OMST-L-M2实验室安全管理规定</a>
+                  </dd>
+                  <dd><a href="./home/omst-l-m2.html" target="aaas"> OMST-L-M2实验室安全管理规定</a>
+                     </dd>
+                  <dd><a href="./home/omst-l-m3.html" target="aaas">OMST-L-M3 原材料管理</a></dd>
+                  <dd><a href="./home/omst-l-m4.html" target="aaas">OMST-L-M4 5S</a></dd>
+                </dl>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:;">质量管理文件Q</a>
+                <dl class="layui-nav-child">
+                  <dd id="omstq1"><a href="">OMST-L-Q1日常控制卡</a></dd>
+                  <dd><a href="./home/omst-l-m1.html" target="aaas">OMST-L-Q2样品流转卡</a></dd>
+                  <dd><a href="">OMST-L-Q3点检表</a></dd>
+                  <dd><a href="">OMST-L-Q4质量标准文件</a></dd>
+                  <dd><a href="">OMST-L-Q5标准参考文件</a></dd>
+                </dl>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:;">设备管理文件E</a>
+                <dl class="layui-nav-child">
+                  <dd><a href="">OMST-L-E1维保计划</a></dd>
+                  <dd><a href="">OMST-L-E2维修记录单</a></dd>
+                  <dd><a href="">OMST-L-E3校准文件</a></dd>
+                  <dd><a href="">OMST-L-E4设备说明书</a></dd>
+                </dl>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:;">作业指导书S</a>
+                <dl class="layui-nav-child">
+                  <dd><a href="">S1制样（实验测试部）</a></dd>
+                  <dd><a href="./home/omst-l-s2.html" target="aaas"> S2设备操作（实验测试部）</a>
+                  </dd>
+                  <dd><a href="">S3测试方法（研发部）</a></dd>
+                  <dd><a href="">S4设备维保sop</a></dd>
+                  <dd><a href="">S5标准参考文献</a></dd>
+                </dl>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:;">公司管理规定</a>
+                <dl class="layui-nav-child">
+                  <dd><a href="./home/gsgl.html" target="aaas">公司管理总则</a></dd>
+                  <dd><a href="./home/gsg2.html" target="aaas">实验室管理规定</a></dd>
+                  <dd><a href="./home/gsg3.html" target="aaas">危废管理</a></dd>
+                  <dd><a href="./home/yshi.html" target="aaas">人事劳务文件</a></dd>
+                  <dd><a href="../耐切割式样制作sop模板.doc" target="aaas">合同</a></dd>
+                  <dd><a href="./home/gsgl.html" target="aaas">专利相关</a></dd>
+                </dl>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:;">公司管理规定22</a>
+                <dl class="layui-nav-child">
+                  <dd><a href="./home/gsgl.html" target="aaas">公司管理总则</a></dd>
+                  <dd><a href="./home/gsg2.html" target="aaas">实验室管理规定</a></dd>
+                  <dd><a href="./home/gsg3.html" target="aaas">危废管理</a></dd>
+                  <dd><a href="./home/yshi.html" target="aaas">人事劳务文件</a></dd>
+                  <dd><a href="../耐切割式样制作sop模板.doc" target="aaas">合同</a></dd>
+                  <dd><a href="./home/gsgl.html" target="aaas">专利相关</a></dd>
+                </dl>
+              </li>
+            </ul>
+        </div>
+      </div>
+      
+      <div class="layui-body">
+        <!-- 内容主体区域 -->
+        
+        <iframe name="aaas" src="./omst.html" frameborder="0"></iframe>
+      </div>
+      
+      <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        OMST公司文件管理
+      </div>
+    </div>
+    <script src="./assets/lib/layui-v2.6.8/layui/layui.js"></script>
+    <script src="./assets/lib/jquery.js"></script>
+    <script src="./assets/js/index123.js"></script>
+  
+    <script>
+ $(function(){
+      $('#omstq1').on('click' ,function(){
+          let div =document.createElement('div')
+          console.log()
+
+
+      })
+
+      $.get('http://127.0.0.1:3000/denghlu/login4', function (res) {
+        // status 为 0 表示获取用户名称成功；否则表示获取用户名称失败！
+        if (res.status !== 0) {
+          alert('您尚未登录，请登录后再执行此操作！')
+          location.href = './omst-login.html'
+        } else {
+          alert('欢迎您：' + res.username)
+        }
+      })
+ 
+        
+ })
+    </script>
+    </body>
 </html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/lib/layui-v2.6.8/layui/css/layui.css"/>
+</head>
+<body>
+  <label class="layui-form-label"></label>
+          
+  <input placeholder="请输入标题" >
+
+
+  <button id="dddd">立即提交</button>
+    <table class="layui-table">
+        <colgroup>
+          <col width="150">
+          <col width="200">
+          <col>
+        </colgroup>
+        <table class="layui-table">
+          <colgroup>
+            <col>
+            <col  width="400">
+            <col  width="200">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>名称</th>
+              <th>文件等级</th>
+              <th>操作</th>
+            </tr> 
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <td>
+                  <a href="./home/pdf/akron磨耗式样制作sop模板 - .pdf" target="aaas"> 
+                  
+                      
+                     </a></li>
+              </td>
+              <td</td> -->
+              <!-- <td>
+                <button type="button" class="layui-btn  layui-btn-xs" >预览</button>
+                <button type="button" class="layui-btn  layui-btn-xs">删除</button>
+                 <button type="button" class="layui-btn  layui-btn-xs">3</button>
+                <button type="button" class="layui-btn  layui-btn-xs">4</button> -->
+              
+            </tr>
+           
+          </tbody>
+    
+        <SCRipt  type="text/html" id="fff">
+          {{each data }}
+          <tr>
+            <td>
+         
+              <a href="./home/pdf/{{$value.username}}.pdf" target="aaas"> 
+                    
+                        
+                {{$value.username}}</a></li>
+          
+            </td> 
+            <td>
+              {{$value.dengji}}
+            </td>
+            
+             
+           <td>
+              <button type="button" class="layui-btn  layui-btn-xs"id="nn{{$value.id}}">预览</button>
+              <button type="button" class="layui-btn  layui-btn-xs" >删除</button>
+               <button type="button" class="layui-btn  layui-btn-xs">3</button>
+              <button type="button" class="layui-btn  layui-btn-xs">4</button> 
+            
+          </tr>
+{{/each}}
+        </SCRipt>
+    
+     
+      
+         
+          
+        
+    
+      <script src="./assets/lib/layui-v2.6.8/layui/layui.js"></script>
+    <script src="./assets/lib/jquery.js"></script>
+    <SCRipt src=".//assets/lib/template-web.js"></SCRipt>
+    
+    <script>
+       $(function(){
+
+        $('#dddd').on('click' , function(){
+         let ff = $('input').val()
+         let gg={}
+        
+          //   $.ajax({
+
+          //   type:'get',
+          //   url:'http://127.0.0.1:3000/api/getUserListById/',
+          //   data:{id:ff},
+          //   success:function(res){
+          
+          //     let tr = document.createElement('tr')
+          //     let tbody= document.querySelector('tbody')
+          //     tbody.innerHTML =`
+          //     <tr>
+          //     <td>
+          //      ${res.data[0].username}
+          //     </td>
+          //     <td>${res.data[0].dengji}</td>
+          //     <td>
+          //       <button type="button" class="layui-btn  layui-btn-xs" id="anniu">预览</button>
+          //       <button type="button" class="layui-btn  layui-btn-xs">删除</button>
+          //       <!-- <button type="button" class="layui-btn  layui-btn-xs">3</button>
+          //       <button type="button" class="layui-btn  layui-btn-xs">4</button> -->
+          //     </td>
+              
+          //   </tr>
+              
+          //     `
+          //     $('tbody').append('tbod')
+          //     console.log(res.data[0].dizhi)
+          //     console.log(res.data[0])
+
+          //   }
+          // }) 
+          $.ajax({
+
+type:'get',
+url:'http://127.0.0.1:3000/api/geListById/g/',
+data:{name:ff},
+success:function(res){
+  
+      
+             let fdgd =template('fff' , res)
+             $('tbody').html(fdgd)
+             console.log(res.data)
+         
+}
+})
+
+        })
+      
+        $('tbody').on('click' ,'#anniu', function(){
+          console.log(222)
+          let ff = $('input').val()
+          $.ajax({
+
+type:'get',
+url:'http://127.0.0.1:3000/api/getUserListById/',
+data:{id:ff},
+success:function(res){
+
+ 
+  
+}
+
+
+})
+
+        })       
+            
+ 
+         
+        
+
+          
+       })
+       </script>
+</body>
+</html>
